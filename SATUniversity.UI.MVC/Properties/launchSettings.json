@@ -3,16 +3,16 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:57262",
-      "sslPort": 44386
+      "applicationUrl": "http://localhost:58159",
+      "sslPort": 44387
     }
   },
   "profiles": {
-    "SATUniversity": {
+    "SATUniversity.UI.MVC": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7261;http://localhost:5261",
+      "applicationUrl": "https://localhost:7265;http://localhost:5265",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
