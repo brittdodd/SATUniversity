@@ -38,4 +38,8 @@
     <ProjectReference Include="..\SATUniversity.DATA.EF\SATUniversity.DATA.EF.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Documentation\Kurtis\" />
+  </ItemGroup>
+
 </Project>
