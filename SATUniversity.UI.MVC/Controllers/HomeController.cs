@@ -13,6 +13,27 @@ namespace SATUniversity.UI.MVC.Controllers
             _logger = logger;
         }
 
+        public IActionResult Courses()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult Scheduling()
+        {
+            return View();
+        }
+
+        public IActionResult HouseSorting()
+        {
+            return View();
+        }
+
+
         public IActionResult Index()
         {
             return View();
