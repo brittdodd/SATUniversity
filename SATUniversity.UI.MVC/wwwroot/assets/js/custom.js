@@ -24,13 +24,13 @@
           })
         });
 
-        var $grid = $(".grid").isotope({
-          itemSelector: ".all",
-          percentPosition: true,
-          masonry: {
-            columnWidth: ".all"
-          }
-        });
+        //var $grid = $(".grid").isotope({
+        //  itemSelector: ".all",
+        //  percentPosition: true,
+        //  masonry: {
+        //    columnWidth: ".all"
+        //  }
+        //});
 
 
 	const Accordion = {

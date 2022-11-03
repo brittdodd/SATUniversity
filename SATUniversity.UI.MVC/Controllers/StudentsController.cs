@@ -9,9 +9,12 @@ using Microsoft.EntityFrameworkCore;
 using SATUniversity.DATA.EF.Models;
 using System.Drawing;//added for Image upload
 using SATUniversity.UI.MVC.Utilities;//added for Image upload
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace SATUniversity.UI.MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class StudentsController : Controller
     {
         private readonly SATContext _context;
@@ -25,6 +28,7 @@ namespace SATUniversity.UI.MVC.Controllers
         }
 
         // GET: Students
+        [Authorize(Roles = "Scheduling")]
         public async Task<IActionResult> Index()
         {
             var sATContext = _context.Students.Include(s => s.Ss);
@@ -32,6 +36,7 @@ namespace SATUniversity.UI.MVC.Controllers
         }
 
         // GET: Students/Details/5
+        [Authorize(Roles = "Scheduling")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Students == null)

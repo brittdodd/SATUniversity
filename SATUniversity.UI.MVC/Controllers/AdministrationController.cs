@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SATUniversity.UI.MVC.Controllers//Update namespace
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdministrationController : Controller
     {
         #region Props/Ctors
@@ -21,6 +21,7 @@ namespace SATUniversity.UI.MVC.Controllers//Update namespace
         #region CRUD for Users
         #region Display Users
         [HttpGet]
+
         public IActionResult ListUsers()
         {
             var users = userManager.Users.ToList();
