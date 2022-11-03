@@ -31,29 +31,22 @@ https://templatemo.com/tm-569-edu-meeting
 
 <body>
 
+
   <!-- Sub Header -->
   <div class="sub-header">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-sm-8">
-          <div class="left-content">
-            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
-          </div>
+        
         </div>
         <div class="col-lg-4 col-sm-4">
-          <div class="right-icons">
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
+          
+      
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
       <div class="container">
@@ -69,7 +62,6 @@ https://templatemo.com/tm-569-edu-meeting
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                           <li><a href="meetings.html">Meetings</a></li>
-                          <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
                           <li class="has-sub">
                               <a href="javascript:void(0)">Pages</a>
                               <ul class="sub-menu">
@@ -77,8 +69,35 @@ https://templatemo.com/tm-569-edu-meeting
                                   <li><a href=@Url.Action("Meeting-detail", "Home")>Meeting Details</a></li>
                               </ul>
                           </li>
-                          <li class="scroll-to-section"><a href=@Url.Action("Courses", "Home")>Courses</a></li> 
-                          <li class="scroll-to-section"><a href=@Url.Action("Contact", "Home")>Contact Us</a></li> 
+                          <li class="scroll-to-section"><a href=@Url.Action("Index", "Courses")>Courses</a></li>
+                            <li class="scroll-to-section"><a href=@Url.Action("StudentSupplies", "Home")>Student Supplies</a></li>
+                            <li class="scroll-to-section"><a href=@Url.Action("Contact", "Home")>Contact Us</a></li> 
+
+
+                            <li class="has-sub">
+                                <a href="javascript:void(0)">Admin</a>
+                                <ul class="sub-menu">
+                                   
+                                    <li><a asp-action="ListUsers" asp-controller="Administration">Users</a></li>
+                                    <li><a asp-action="ListRoles" asp-controller="Administration">Roles</a></li>
+                                </ul>
+
+                           </li>
+                           @*     <li class="nav-item dropdown">
+                                        <span class="nav-label">
+                                            Admin <span class="caret"></span>
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                       
+                                    </ul>
+                                </li>*@
+                            @*@if (User.IsInRole("Admin"))
+                            {
+                            }
+*@
+
+                            <partial name="_LoginPartial" />
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
@@ -89,6 +108,7 @@ https://templatemo.com/tm-569-edu-meeting
           </div>
       </div>
   </header>
+
   <!-- ***** Header Area End ***** -->
 
   @RenderBody()
@@ -101,14 +121,14 @@ https://templatemo.com/tm-569-edu-meeting
     <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
 @*    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>*@
 
-    <script src="~/assets/js/isotope.min.js"></script>
+   @* <script src="~/assets/js/isotope.min.js"></script>*@
     <script src="~/assets/js/owl-carousel.js"></script>
     <script src="~/assets/js/lightbox.js"></script>
     <script src="~/assets/js/tabs.js"></script>
     <script src="~/assets/js/video.js"></script>
     <script src="~/assets/js/slick-slider.js"></script>
     <script src="~/assets/js/custom.js"></script>
-    <script>
+@*    <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');
 
@@ -153,7 +173,7 @@ https://templatemo.com/tm-569-edu-meeting
         $(window).scroll(function () {
           checkSection();
         });
-    </script>
+    </script>*@
 </body>
 
       @await RenderSectionAsync("scripts", required: false)

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SATUniversity.UI.MVC.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace SATUniversity.UI.MVC.Controllers
 {
@@ -13,10 +15,7 @@ namespace SATUniversity.UI.MVC.Controllers
             _logger = logger;
         }
 
-        public IActionResult Courses()
-        {
-            return View();
-        }
+   
 
         public IActionResult Contact()
         {
@@ -29,6 +28,11 @@ namespace SATUniversity.UI.MVC.Controllers
         }
 
         public IActionResult HouseSorting()
+        {
+            return View();
+        }
+
+        public IActionResult StudentSupplies()
         {
             return View();
         }
