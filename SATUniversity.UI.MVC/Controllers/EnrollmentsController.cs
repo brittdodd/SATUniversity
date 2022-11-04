@@ -11,8 +11,8 @@ using SATUniversity.DATA.EF.Models;
 
 namespace SATUniversity.UI.MVC.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Authorize(Roles = "Scheduling")]
+    [Authorize(Roles = "Admin, Scheduling")]
+    
     public class EnrollmentsController : Controller
     {
         private readonly SATContext _context;

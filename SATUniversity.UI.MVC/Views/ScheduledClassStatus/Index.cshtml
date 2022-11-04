@@ -1,13 +1,14 @@
-﻿@model IEnumerable<SATUniversity.DATA.EF.Models.ScheduledClassStatus>
+﻿
+@model IEnumerable<SATUniversity.DATA.EF.Models.ScheduledClassStatus>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Class Statuses</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    
 </p>
 <table class="table">
     <thead>
@@ -25,9 +26,10 @@
                 @Html.DisplayFor(modelItem => item.Scsname)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Scsid">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Scsid">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Scsid">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Scsid">Details</a> 
+                <a asp-action="Create">Create</a>
+                <a asp-action="Edit" asp-route-id="@item.Scsid">Edit</a> 
+                <a asp-action="Delete" asp-route-id="@item.Scsid">Delete</a> 
             </td>
         </tr>
 }

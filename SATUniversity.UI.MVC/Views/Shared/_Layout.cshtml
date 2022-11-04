@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -47,7 +49,7 @@ https://templatemo.com/tm-569-edu-meeting
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="@Url.Action("Index", "Home")" class="active">Home</a></li>
-                            @if (User.IsInRole("Admin"))
+                            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                             {
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">Admin</a>
@@ -61,7 +63,7 @@ https://templatemo.com/tm-569-edu-meeting
                                     </ul>
                                 </li>
                             }
-                            @if (User.IsInRole("Scheduling"))
+                            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Scheduling") || User.IsInRole("Admin"))
                             {
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">Scheduling Staff</a>
@@ -72,17 +74,17 @@ https://templatemo.com/tm-569-edu-meeting
                                     </ul>
                                 </li>
                             }
-                            @if (User.IsInRole("Student"))
+                            @*@if (SignInManager.IsSignedIn(User) && User.IsInRole("Student") || User.IsInRole("Admin"))
                             {
                                 <li class="has-sub">
-                                    <a href="javascript:void(0)">Scheduling Staff</a>
+                                    <a href="javascript:void(0)">Student Portal</a>
                                     <ul class="sub-menu">
                                         <li><a href=@Url.Action("Index", "Enrollments")>Enrollments</a></li>
                                         <li><a href=@Url.Action("Index", "ScheduledClasses")>Scheduled Classes</a></li>
                                         <li class="scroll-to-section"><a href=@Url.Action("StudentSupplies", "Home")>Student Supplies</a></li>
                                     </ul>
                                 </li>
-                            }
+                            }*@
                             <li class="scroll-to-section"><a href=@Url.Action("Index", "Courses")>Courses</a></li>
                             <li class="scroll-to-section"><a href=@Url.Action("Contact", "Home")>Contact Us</a></li>
 

@@ -1,13 +1,15 @@
-﻿@model IEnumerable<SATUniversity.DATA.EF.Models.Enrollment>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model IEnumerable<SATUniversity.DATA.EF.Models.Enrollment>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Enrollment</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    
 </p>
 <table class="table">
     <thead>
@@ -37,9 +39,13 @@
                 @Html.DisplayFor(modelItem => item.Student.Email)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EnrollmentId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EnrollmentId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EnrollmentId">Delete</a>
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Scheduling") || User.IsInRole("Admin"))
+                {
+                    <a asp-action="Details" asp-route-id="@item.EnrollmentId">Details</a> 
+                    <a asp-action="Create">Create</a>
+                    <a asp-action="Edit" asp-route-id="@item.EnrollmentId">Edit</a> 
+                    <a asp-action="Delete" asp-route-id="@item.EnrollmentId">Delete</a>
+                 }
             </td>
         </tr>
 }

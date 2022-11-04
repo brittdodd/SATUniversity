@@ -28,7 +28,8 @@ namespace SATUniversity.UI.MVC.Controllers
         }
 
         // GET: Students
-        [Authorize(Roles = "Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public async Task<IActionResult> Index()
         {
             var sATContext = _context.Students.Include(s => s.Ss);
@@ -36,7 +37,8 @@ namespace SATUniversity.UI.MVC.Controllers
         }
 
         // GET: Students/Details/5
-        [Authorize(Roles = "Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Students == null)
@@ -94,7 +96,7 @@ namespace SATUniversity.UI.MVC.Controllers
                         //Retrieve the path to wwwroot
                         string webRootPath = _webHostEnvironment.WebRootPath;
                         //variable for the full image path --> this is where we will save the image
-                        string fullImagePath = webRootPath + "/images/";
+                        string fullImagePath = webRootPath + "/assets/images/StudentImages/";
 
                         //Create a MemoryStream to read the image into the server memory
                         using (var memoryStream = new MemoryStream())
@@ -123,7 +125,7 @@ namespace SATUniversity.UI.MVC.Controllers
                 {
                     //If no image was uploaded, assign a default filename
                     //Will also need to download a default image and name it 'noimage.png' -> copy it to the /images folder
-                    student.PhotoUrl = "noimage.png";
+                    student.PhotoUrl = "noimage.jpg";
                 }
 
                 #endregion
@@ -188,10 +190,10 @@ namespace SATUniversity.UI.MVC.Controllers
                         student.PhotoUrl = Guid.NewGuid() + ext;
                         //build our file path to save the image
                         string webRootPath = _webHostEnvironment.WebRootPath;
-                        string fullPath = webRootPath + "/images/";
+                        string fullPath = webRootPath + "/assets/images/StudentImages/";
 
                         //Delete the old image
-                        if (oldImageName != "noimage.png")
+                        if (oldImageName != "noimage.jpg")
                         {
                             ImageUtility.Delete(fullPath, oldImageName);
                         }
