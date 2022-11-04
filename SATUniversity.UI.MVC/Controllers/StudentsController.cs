@@ -14,7 +14,7 @@ using System.Data;
 
 namespace SATUniversity.UI.MVC.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Scheduling")]
     public class StudentsController : Controller
     {
         private readonly SATContext _context;
@@ -58,6 +58,7 @@ namespace SATUniversity.UI.MVC.Controllers
         }
 
         // GET: Students/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["Ssid"] = new SelectList(_context.StudentStatuses, "Ssid", "Ssname");
@@ -69,6 +70,7 @@ namespace SATUniversity.UI.MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("StudentId,FirstName,LastName,House,Address,City,State,ZipCode,Phone,Email,PhotoUrl,Ssid,Image")] Student student)
         {
             if (ModelState.IsValid)
@@ -139,6 +141,7 @@ namespace SATUniversity.UI.MVC.Controllers
         }
 
         // GET: Students/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Students == null)
@@ -237,6 +240,7 @@ namespace SATUniversity.UI.MVC.Controllers
         }
 
         // GET: Students/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Students == null)
@@ -258,6 +262,7 @@ namespace SATUniversity.UI.MVC.Controllers
         // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Students == null)

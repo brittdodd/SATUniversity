@@ -9,7 +9,7 @@
 <h1>Scheduled Classes</h1>
 
 <p>
-    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Scheduling") || User.IsInRole("Admin"))
     {
         <a asp-action="Create">Create</a>
     }
@@ -63,7 +63,6 @@
                     @if (SignInManager.IsSignedIn(User) && User.IsInRole("Scheduling") || User.IsInRole("Admin"))
                     {
                         <a asp-action="Details" asp-route-id="@item.ScheduledClassId">Details</a> 
-                        <a asp-action="Create">Create</a>
                         <a asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a> 
                     }
                     @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
