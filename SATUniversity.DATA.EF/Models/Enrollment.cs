@@ -11,6 +11,6 @@ namespace SATUniversity.DATA.EF.Models
         public DateTime EnrollmentDate { get; set; }
 
         public virtual ScheduledClass ScheduledClass { get; set; } = null!;
-        public virtual Student Student { get; set; } = null!;
+        public virtual Student? Student { get; set; } //= null!;
     }
 }

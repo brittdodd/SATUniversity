@@ -9,7 +9,10 @@
 <h1>Students</h1>
 
 <p>
-    
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <a asp-action="Create">Create</a>
+    }
 </p>
 <table class="table">
     <thead>
@@ -93,7 +96,6 @@
                 }
                 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                 {
-                    <a asp-action="Create">Create</a>
                     <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> 
                     <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
                 }

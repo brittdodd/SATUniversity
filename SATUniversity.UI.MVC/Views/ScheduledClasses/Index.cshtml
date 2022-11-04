@@ -9,7 +9,10 @@
 <h1>Scheduled Classes</h1>
 
 <p>
-    
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <a asp-action="Create">Create</a>
+    }
 </p>
 <table class="table">
     <thead>

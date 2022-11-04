@@ -14,6 +14,6 @@ namespace SATUniversity.DATA.EF.Models
         public string Ssname { get; set; } = null!;
         public string? Ssdescription { get; set; }
 
-        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<Student>? Students { get; set; }
     }
 }
