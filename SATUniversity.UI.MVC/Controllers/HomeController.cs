@@ -55,7 +55,7 @@ namespace SATUniversity.UI.MVC.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Student")]
+        [Authorize(Roles = "Student, Admin, Scheduling")]
         public IActionResult StudentSupplies()
         {
             return View();

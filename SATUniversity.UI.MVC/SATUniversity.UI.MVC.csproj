@@ -42,6 +42,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Documentation\Kurtis\" />
+    <Folder Include="wwwroot\_Archive\assets\images\NewFolder\" />
   </ItemGroup>
 
 </Project>

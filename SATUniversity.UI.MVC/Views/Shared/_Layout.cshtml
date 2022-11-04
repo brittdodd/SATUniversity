@@ -18,7 +18,8 @@
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="~/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    @*<link rel="stylesheet" href="~/assets/css/fontawesome.css">*@
     <link rel="stylesheet" href="~/assets/css/templatemo-edu-meeting.css">
     <link rel="stylesheet" href="~/assets/css/owl.css">
     <link rel="stylesheet" href="~/assets/css/lightbox.css">
@@ -74,7 +75,7 @@ https://templatemo.com/tm-569-edu-meeting
                                     </ul>
                                 </li>
                             }
-                            @*@if (SignInManager.IsSignedIn(User) && User.IsInRole("Student") || User.IsInRole("Admin"))
+                            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Student") || User.IsInRole("Admin"))
                             {
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">Student Portal</a>
@@ -84,7 +85,7 @@ https://templatemo.com/tm-569-edu-meeting
                                         <li class="scroll-to-section"><a href=@Url.Action("StudentSupplies", "Home")>Student Supplies</a></li>
                                     </ul>
                                 </li>
-                            }*@
+                            }
                             <li class="scroll-to-section"><a href=@Url.Action("Index", "Courses")>Courses</a></li>
                             <li class="scroll-to-section"><a href=@Url.Action("Contact", "Home")>Contact Us</a></li>
 
@@ -101,8 +102,11 @@ https://templatemo.com/tm-569-edu-meeting
   </header>
 
   <!-- ***** Header Area End ***** -->
-
-  @RenderBody()
+  <section class="heading-page header-text">
+      <div>
+            @RenderBody()
+      </div>
+  </section>
 
  
 

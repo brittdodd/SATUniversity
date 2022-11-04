@@ -772,7 +772,7 @@ Gryffindor
 */
 
 section.gryffindor {
-    background-image: url(../images/meetings-bg.jpg);
+    background-image: url(../images/IndexImages/957361.jpg);
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -1385,7 +1385,7 @@ our facts
 ---------------------------------------------
 */
 
-section.our-facts {
+/*section.our-facts {
   background-image: url(../images/facts-bg.jpg);
   background-position: center center;
   background-attachment: fixed;
@@ -1446,7 +1446,7 @@ section.our-facts .video {
 section.our-facts .video img {
   padding: 170px 0px;
   max-width: 56px;
-}
+}*/
 
 
 /* 
@@ -1586,13 +1586,13 @@ heading page
 */
 
 section.heading-page {
-  background-image: url(../images/heading-bg.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 230px;
-  padding-bottom: 110px;
-  text-align: center;
+    background-image: url(../images/heading-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 230px;
+    padding-bottom: 110px;
+    text-align: center;
 }
 
 section.heading-page h6 {
@@ -1610,7 +1610,7 @@ section.heading-page h2 {
   font-size: 36px;
   text-transform: uppercase;
   font-weight: 800;
-  color: #fff;
+  color: #a12c2f;
   letter-spacing: 1px;
 }
 
